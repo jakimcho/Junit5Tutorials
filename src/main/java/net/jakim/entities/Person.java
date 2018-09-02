@@ -1,14 +1,15 @@
 package net.jakim.entities;
 
-import java.lang.reflect.AnnotatedElement;
 import java.lang.reflect.Field;
+import java.util.logging.Logger;
 
 public class Person
 {
+    private static final Logger LOGGER = Logger.getLogger( "Person" );
     private String firsName;
     private String sirName;
 
-    //@MyCustomProp( age = 23 )
+    @MyCustomProp( age = 25 )
     private int age = 10;
 
     public String getFirsName( )
@@ -40,17 +41,17 @@ public class Person
                            .getDeclaredField( "age" );
         } catch( NoSuchFieldException e )
         {
-            e.printStackTrace( );
+            LOGGER.severe( e.getMessage( ) );
         }
 
-        if( ageField.isAnnotationPresent( MyCustomProp.class ) )
+        if( null != ageField && ageField.isAnnotationPresent( MyCustomProp.class ) )
         {
             MyCustomProp ageAnnotation = ageField.getAnnotation( MyCustomProp.class );
-            System.out.println( "Got annotated field age value:" + ageAnnotation.age( ) );
-            return ageAnnotation.age( );
+            int res = ageAnnotation.age();
+            LOGGER.info( "Got annotated field age value: " + res );
+            return res;
         } else
         {
-            System.out.println( "Age field was not annotated" );
             return this.age;
         }
 
