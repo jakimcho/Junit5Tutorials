@@ -19,7 +19,7 @@ public class Library
     {
         Set result = new HashSet( );
         this.libraryService.getAuthors( )
-                           .forEach( ( author )->
+                           .forEach( author->
                                      {
                                          if( author.toLowerCase( )
                                                    .startsWith( letters.toLowerCase( ) ) )
@@ -35,7 +35,7 @@ public class Library
     {
         Set result = new HashSet( );
         this.libraryService.getTitles( )
-                           .forEach( ( title )->
+                           .forEach( title->
                                      {
                                          if( title.toLowerCase( )
                                                   .startsWith( letters.toLowerCase( ) ) )

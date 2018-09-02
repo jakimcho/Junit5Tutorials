@@ -1,0 +1,1 @@
+mvn sonar:sonar -Dsonar.projectKey=jakimcho_Junit5Tutorials -Dsonar.organization=jakimcho-github -Dsonar.host.url=https://sonarcloud.io -Dsonar.login=cfb3d4ffb4229637dfe560187e73944b06fb527e -Dsonar.junit.reportPaths=target/surefire-reports/
