@@ -6,20 +6,20 @@ import java.util.logging.Logger;
 public class Person
 {
     private static final Logger LOGGER = Logger.getLogger( "Person" );
-    private String firsName;
+    private String firstName;
     private String sirName;
 
     @MyCustomProp( age = 25 )
     private int age = 10;
 
-    public String getFirsName()
+    public String getFirstName( )
     {
-        return firsName;
+        return firstName;
     }
 
-    public void setFirsName( String firsName )
+    public void setFirstName( String firstName )
     {
-        this.firsName = firsName;
+        this.firstName = firstName;
     }
 
     public String getSirName()
@@ -34,7 +34,7 @@ public class Person
 
     public String getFullName()
     {
-        return this.firsName + " " + this.getSirName();
+        return this.firstName + " " + this.getSirName( );
     }
 
     public int getAge()

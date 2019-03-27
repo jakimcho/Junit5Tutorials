@@ -13,14 +13,14 @@ public class PersonTests
     public PersonTests( ){
         super();
         this.person = new Person();
-        this.person.setFirsName( "Ivan" );
+        this.person.setFirstName( "Ivan" );
         this.person.setSirName( "Dimitrov" );
     }
 
     @Test
     public void testGetUserFirstName( ){
         LOGGER.info("Inside verifyUserFirstName" );
-        Assertions.assertEquals( "Ivan", this.person.getFirsName(), "Wrong first name" );
+        Assertions.assertEquals( "Ivan", this.person.getFirstName( ), "Wrong first name" );
         LOGGER.info("Exiting verifyUserFirstName" );
     }
 

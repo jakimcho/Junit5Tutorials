@@ -13,7 +13,7 @@ public class RandomTests
     public void testFluentAssertCustomMessage()
     {
         person = new Person();
-        person.setFirsName( "Ivan" );
+        person.setFirstName( "Ivan" );
         person.setSirName( "Ganev" );
 
         assertThat( person.getFullName() )
