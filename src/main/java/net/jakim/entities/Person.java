@@ -12,7 +12,7 @@ public class Person
     @MyCustomProp( age = 25 )
     private int age = 10;
 
-    public String getFirsName( )
+    public String getFirsName()
     {
         return firsName;
     }
@@ -22,7 +22,7 @@ public class Person
         this.firsName = firsName;
     }
 
-    public String getSirName( )
+    public String getSirName()
     {
         return sirName;
     }
@@ -32,19 +32,24 @@ public class Person
         this.sirName = sirName;
     }
 
-    public int getAge( )
+    public String getFullName()
+    {
+        return this.firsName + " " + this.getSirName();
+    }
+
+    public int getAge()
     {
         Field ageField = null;
         try
         {
-            ageField = this.getClass( )
+            ageField = this.getClass()
                            .getDeclaredField( "age" );
-        } catch( NoSuchFieldException e )
+        } catch ( NoSuchFieldException e )
         {
-            LOGGER.severe( e.getMessage( ) );
+            LOGGER.severe( e.getMessage() );
         }
 
-        if( null != ageField && ageField.isAnnotationPresent( MyCustomProp.class ) )
+        if ( null != ageField && ageField.isAnnotationPresent( MyCustomProp.class ) )
         {
             MyCustomProp ageAnnotation = ageField.getAnnotation( MyCustomProp.class );
             int res = ageAnnotation.age();
