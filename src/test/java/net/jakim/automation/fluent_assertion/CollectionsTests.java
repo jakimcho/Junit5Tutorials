@@ -29,7 +29,8 @@ public class CollectionsTests
         people.add( p2 );
         people.add( p3 );
 
-        assertThat( people ).extracting( "firstName" ).as("People collection should contain People with Specific first names")
+        assertThat( people ).extracting( Person::getFirstName )
+                            .as( "People collection should contain People with Specific first names" )
                             .contains( "Ivan",
                                        "Donkoasd",
                                        "Maria" );

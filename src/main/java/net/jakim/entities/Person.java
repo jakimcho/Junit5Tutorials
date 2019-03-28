@@ -9,7 +9,7 @@ public class Person
     private String firstName;
     private String sirName;
 
-    @MyCustomProp( age = 25 )
+    //@MyCustomProp( age = 25 )
     private int age = 10;
 
     public String getFirstName( )
@@ -61,5 +61,10 @@ public class Person
         }
 
 
+    }
+
+    public void setAge( int i )
+    {
+        this.age = i;
     }
 }
